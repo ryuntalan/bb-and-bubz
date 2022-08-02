@@ -47,7 +47,7 @@ function time() {
   var displayHours = 0;
   
   if (diffHours < 0 ) {
-    displayHours = 23 + diffHours;
+    displayHours = 24 + diffHours;
     displayDays = Math.round(diffDays - 1);
 
   } else {
