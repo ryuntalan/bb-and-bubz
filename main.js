@@ -22,7 +22,7 @@ function time() {
   var todaysDate = new Date();
 
   var diffTime = Math.abs(todaysDate - girlfriendDate);
-  var diffDays = Math.round(diffTime / (1000 * 60 * 60 * 24));
+  var diffDays = Math.round((diffTime / (1000 * 60 * 60 * 24)) - 1);
 
   var displayDays = 0;
   var displayHours = 0;
@@ -40,6 +40,7 @@ function time() {
     //if hours are below 20. It's before 8:00pm.
     displayHours = 24 + diffHours;
     displayDays = diffDays - 1;
+    console.log(diffDays);
 
   } else {
     //if hours are above 20. It's after 8:00pm.
@@ -60,5 +61,6 @@ function time() {
   timer.textContent = 
 (displayDays + " days") + ", " + (displayHours + " hours") + ", " + (displayMinutes + " minutes") + ", and " + (s + " seconds");
 }
+
 
 setInterval(time, 1000);
